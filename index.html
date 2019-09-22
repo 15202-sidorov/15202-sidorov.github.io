@@ -1,397 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>SVOBODA | Easy language learning starts here.</title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/gaia.css" rel="stylesheet"/>
+<base href="">
 
-    <!--     Fonts and icons     -->
-    <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="google" content="notranslate" />
+<title>MockFlow WireframePro - Viewer</title>
+<!--  external css files -->
+<link href="https://wireframepro.mockflow.com/css/external/bootstrap3/bootstrap-editor-min.css" rel="stylesheet" type="text/css" />	
+<link href="https://wireframepro.mockflow.com/css/external/bootstrap3/bootstrap-theme.css" rel="stylesheet" type="text/css" />	
+
+<link href="https://wireframepro.mockflow.com/css/external/jquery-ui-1.11.4.custom.min.css" rel="stylesheet" type="text/css" />
+<link href="https://wireframepro.mockflow.com/css/external/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+<link href="https://wireframepro.mockflow.com/css/external/styles/kendo.custom.metro.css" rel="stylesheet" type="text/css" />
+<link href="https://wireframepro.mockflow.com/css/external/bootstrap-toggle-buttons.css" rel="stylesheet" type="text/css" />
+<link href="css/external/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,regular,italic,600,700,700italic" rel="stylesheet">
+
+<link href="css/internal/icons/style.css" rel="stylesheet" type="text/css" />
+
+
+<!--  internal css files -->
+<link href="css/internal/editor-min.css?v=2019_09_18_17_12_35" rel="stylesheet" type="text/css">
+
+<!--  external js files --> 
+<!-- mfexternal-min.js -->
+
+<script type="text/javascript" src="data/data.js"></script>
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/wireframepro/external/js/webfont.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/external/jquery-2.1.4.min.js"></script>-->
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/wireframepro/external/js/jquery-ui-1.11.4.custom.min.js"></script>
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/wireframepro/external/js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/wireframepro/external/js/kendo.custom.min.js"></script> 
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/wireframepro/external/js/bootstrap3.min.js"></script> 
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/external/js/jquery.textchange.min.js"></script>
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/external/js/jquery.event.drag-2.2.min.js"></script>
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/external/js/arraycollection.min.js"></script> 
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/wireframepro/external/js/spin.min.js"></script> 
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/wireframepro/external/js/multiline.min.js"></script> 
+<script type="text/javascript" src="https://d20hhedk3h2l88.cloudfront.net/apps/wireframepro/external/js/jquery.address-1.5.min.js"></script> 
+
+<!-- internal js files -->
+<script type="text/javascript" src="js/internal/mf_wireframepro-min.js?v=2019_09_18_17_12_35"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+<script type="text/javascript"> 
+
+   		
+	$(document).ready(function()
+	{
+		
+		
+		mf_main = new MF_Main();
+		
+		
+		mf_main.PUBLIC = true;
+   	
+		//when you change this make sure the same code in MF_Main is updated
+	
+
+		mf_main.onLoadInterface();
+
+	});	 
+</script>
+
+
+
+
+<script type="text/javascript">
+
+//create the main app instance
+var mf_main =  null;
+
+$(window).resize(function()
+{
+	if(mf_main)
+	{
+		mf_main.interfaceResize();
+	}
+  		
+});
+   			
+$(window).resize();
+
+
+
+
+
+</script>
 </head>
-
-<body>
-
-    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
-        <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
-        <div class="container">
-            <div class="navbar-header">
-                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar bar1"></span>
-                    <span class="icon-bar bar2"></span>
-                    <span class="icon-bar bar3"></span>
-                </button>
-                <a href="http://www.creative-tim.com" class="navbar-brand">
-                    SVOBODA
-                </a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right navbar-uppercase">
-    
-                    <li class="dropdown">
-                        <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-share-alt"></i> Share
-                        </a>
-                        <ul class="dropdown-menu dropdown-danger">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook-square"></i> Facebook</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-    </nav>
+<body id="mainBody" class="notranslate" translate="no" style="display: none; overflow: hidden;">
 
 
-    <div class="section section-header">
-        <div class="parallax filter filter-color-red">
-            <div class="image"
-                style="background-image: url('assets/img/landingpage.jpeg')">
-            </div>
-            <div class="container">
-                <div class="content">
-                    <div class="title-area">
-                        <h1 class="title-modern">SVOBODA</h1>
-                        <h3>Language school where language learning is easy and natural</h2>
-                        <div class="separator line-separator">♦</div>
-                    </div>
+<div id="mfEditorView" style="width: 100%; height: 100%; display: block; position: absolute; top: 0px; left: 0px;"" >
+<div id="mfTextDummyEditable" style="position: absolute; top: -100px; left: 0px; width: 20px; height: 10px; " contenteditable="true">&nbsp;</div>
+<div id="mfTextDummy" style="position: absolute; top: -100px; left: 0px; width: 20px; height: 10px;">&nbsp;</div>
+<div id="mfrenderbar" data-width="600" data-height="800" data-x="0" data-y="0" style="visibility:hidden; position:absolute; top: 0px; left:0px;">&nbsp;</div>
 
-                    <div class="button-get-started">
-                        <a href="#" target="_blank" class="btn btn-white btn-fill btn-lg ">
-                            CONTACT US
-                        </a>
-                    </div>
-                </div>
+<i id="mfDummyIconImageLoader" class="ico-angle-down-circle" style="position: absolute; top: -100px; left: 0px; z-index: -10; font-size: 10px;"></i>
 
-            </div>
-        </div>
-    </div>
+	 
+	<div style="width: 100%; height: 100%;  background-color: #fff; position: absolute; top: 0px; left: 0px;"" > 	 
+		
+		 <div id="mfPageManagerArea" style="float: left; width: 320px; height: 100%; border-right: 1px solid #ccc;" class="mfGradientBg">
+	  		
+	  		
+			
+			<div id="mfViewerHeader" class="headerbar" style="display: none; width: 320px;   position: absolute; left: 0px; top: 0px;  background-color: #2196F3; color: #fff; height: 0px;">
+	 
+			 	<div style="width: 100%; height: 0px;   overflow: hidden; display: block; ">
+	
+					
+					
+				</div>
+			 	
+			</div>
+			
+	  		<div id="mfNavBar" style="width: 70px; position: absolute; left: 0px; top: 0px; height: 100%; float: left; background-color: #EFF1F5;">
+		  		
+		  		
+	  		
+	  <!-- viewr -->
+	  
+	  
+	 
+	
+		
+	<div style='height: 10px;'></div>
+	
+	
+	<div id="mfNavbarZoomBtn" class="">
+	 <span class="btn trasnparent-btn" style="font-size: 20px;"><i id="mfNavbarZoomBtnIcon" class="ico-zoom_in"></i></span>
+	</div>	
+	<div id="mfNavbarToggleBtn" class="">
+	 <span data-placement="right" title="Hide sidebar"  data-toggle="tooltip" class="btn trasnparent-btn"><i class="ico-back"></i></span>
+	</div>	
+</div>
 
+<div id="mfNavBarContent" style="position: absolute; width: 249px; top: 0px; left: 70px; overflow: hidden; height: 100%; background-color: #fff; color: #fff;" class="mfGradientBg">
+		  		
+		  		
+		  	
+		  	
+<div id="mfContentPages" class="mfNavBarContentHolderCls" style="display: block; width: 100%; height: 100%">
+					
+				
+	<div id="mfPageSearchBar" style="float: left; width: 249px; height: 35px; padding-top: 5px; border: none; border-bottom: 1px solid #ccc; background: transparent; ">
+		  	
+		  <input placeholder="Search Pages" spellcheck=false style="width: 250px; padding-left: 10px; color: #666; height: 25px; font-size: 12px; outline: 0px;  border: none; background: transparent;  outline:none; border: none; box-shadow: none; outline: 0px; font-weight: normal;  background-color: transparent; " id="mfPageSearchBox" type="text" />
+		  		
+		<span id="mfToggleTreeBtn" data-toggle="tooltip" data-placement="bottom" title="Expand/Collapse SiteMap" class="fa-angle-double-down mfImgLink"  style="position: absolute; top: 5px; left: 225px; color: #ccc; font-size: 24px; cursor:pointer;"></span>
+		  		
+	 </div>
+	  		
+	<div id="mfPageList" class="mfGradientBg" >
+	
+	</div>
+	
+	
 
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="title-area">
-                    <h2>What we do</h2>
-                    <div class="separator separator-danger">✻</div>
-                    <p class="description">We promise you, that our language school will drastically increace the speed and 
-                    effectiveness of your language learning process. You will be able to really enjoy a laguage you learn through interestring authentic content and facinating lessons with native speakers.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-graph1"></i>
-                        </div>
-                        <h3>Effective</h3>
-                        <p class="description">We will use new language learning methods that proved themselfs more effective then traditional boring methods.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-note2"></i>
-                        </div>
-                        <h3>Content</h3>
-                        <p class="description">We will create personal course suited for your needs. You will learn language in interesting and authentic content.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-users"></i>
-                        </div>
-                        <h3>Native speakers</h3>
-                        <p class="description">Learning a language with native speakers will boost up your language vocabulary.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section section-our-team-freebie">
-        <div class="parallax filter filter-color-black">
-            <div class="image" style="background-image:url('assets/img/header-2.jpeg')">
-            </div>
-            <div class="container">
-                <div class="content">
-                    <div class="row">
-                        <div class="title-area">
-                            <h2>Our tutors</h2>
-                            <div class="separator separator-danger">✻</div>
-                        </div>
-                    </div>
-
-                    <div class="team">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="card card-member">
-                                            <div class="content">
-                                                <div class="avatar avatar-danger">
-                                                    <img alt="..." class="img-circle" src="assets/img/faces/face_1.jpg"/>
-                                                </div>
-                                                <div class="description">
-                                                    <h3 class="title">Tina</h3>
-                                                    <p class="small-text">Brazil</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card card-member">
-                                            <div class="content">
-                                                <div class="avatar avatar-danger">
-                                                    <img alt="..." class="img-circle" src="assets/img/faces/face_4.jpg"/>
-                                                </div>
-                                                <div class="description">
-                                                    <h3 class="title">Andrew</h3>
-                                                    <p class="small-text">United States</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card card-member">
-                                            <div class="content">
-                                                <div class="avatar avatar-danger">
-                                                    <img alt="..." class="img-circle" src="assets/img/faces/face_3.jpg"/>
-                                                </div>
-                                                <div class="description">
-                                                    <h3 class="title">Michelle</h3>
-                                                    <p class="small-text">France</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div id="mfPageToggleSettings" class="mfPageToolbarCls" style="width: 100%; height: 82px; margin-top: 10px; box-shadow: 0 -8px 6px -6px #ccc; color: #666;  " >
+	
+	<div style="width: 100%; height: 100%; position: relative; color: #666; margin-left: 10px;"> 
 
 
-    <div class="section section-our-clients-freebie">
-        <div class="container">
-            <div class="title-area">
-                <h5 class="subtitle text-gray">Here are some</h5>
-                <h2>Clients Testimonials</h2>
-                <div class="separator separator-danger">∎</div>
-            </div>
+	  <div style="position: absolute; top: 10px; left: 10px; width: 200px;">
+	  	<strong>-</strong> Press SHIFT to highlight links<br/>
+	  	<strong>-</strong> To pan hold SpaceBar &amp; drag mouse 
+	  </div>
+	
+	 <div class="checkbox"  style="position: absolute; top: 60px; left: 10px;">
+	 	<label><input  type="checkbox" checked=true id="mfToggleLinkHighlight"  value="">Reveal Links</label>
+	  </div>
+	  
+	  
+	  <div class="checkbox" style="position: absolute; top: 75px; left: 110px;">
+	  <label><input  type="checkbox" checked=true id="mfToggleAnnotations"  value="">Toggle Annotation</label>
+	  </div>
+	  
+	</div>
+ 	 
+ 	
+</div> 
+ 
+								
+</div>
+				
+				
+				
+				<!-- viewer -->
+			
+				
 
-            <ul class="nav nav-text" role="tablist">
-                <li class="active">
-                    <a href="#testimonial1" role="tab" data-toggle="tab">
-                        <div class="image-clients">
-                            <img alt="..." class="img-circle" src="assets/img/faces/face_5.jpg"/>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#testimonial2" role="tab" data-toggle="tab">
-                        <div class="image-clients">
-                            <img alt="..." class="img-circle" src="assets/img/faces/face_6.jpg"/>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#testimonial3" role="tab" data-toggle="tab">
-                        <div class="image-clients">
-                            <img alt="..." class="img-circle" src="assets/img/faces/face_2.jpg"/>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+				
+			
+  	</div>
+  	
+  	
+	  		
+	  	</div>
+	  	
+	  <div title="Hide sidebar" data-placement="right" data-toggle="tooltip" class="mfShowSidebar"><button style="padding-top: 2px; padding-left: 2px;" class="btn trasnparent-btn"><i class="ico-forward"></i></button></div>
+	  
+		<div id="mfPageArea" style="float: right; width: 700px; height: 100%;" > 	  
+		
+		 
+		  	<div id="mfEditorHolder" unselectable="on" style="overflow: auto; background: #f0f0f0; width: 100%; height: 100%; user-select: none; -webkit-user-select: none; -moz-user-select: -moz-none; " >
+		  	
+		  		
+		  		<div style='overflow: hidden; position: relative; display: block; background: #fff; width: 100%; height: 100%; top: 0px; left: 0px; ' id="mfContainerPage" >
+		  		
+		  				<div  id="mfPanningDiv" style="top: 0px; left: 0px; background-color: rgba(255,255,255,0);   display: none; width: 595px; height: 841px; position: absolute; z-index: 500; overflow: hidden; " ></div>
+		  			
+		  		</div>
+		  	
+		  		
+		    </div>
+	  		
+	  		<div id="mfPageLoader" style='z-index: 5000000; overflow: hidden; background: #fff;  position: absolute; display: block; width: 100%; height: 100%; top: 0px; left: 0px;' >
+	  			<img alt=“Loading” src="images/editor/mf_loader.svg"  class="mfCenterAlign mfSVGLoader" id="mfPageLoaderImg"  />
+	  		</div>
+	  		
+	  		
+	  		
+	  	 
+	  		
+		</div>
+	  	
+	 
+	 
+	   
+  		
+  
+</div>
+</div>
+
+<div id="tmDialogBackground" style="z-index: 200; display: none; background-color: rgba(0,0,0,0.6); position: absolute; top: 0px; left: 0px; overflow: hidden; height: 100%; width: 100%; "  > 
+
+</div>
 
 
-            <div class="tab-content">
-                <div class="tab-pane active" id="testimonial1">
-                    <p class="description">
-                        And I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. Now there is only one important color... Green I even had the pink polo I thought I was Kanye I promise I will never let the people down. I want a better life for all!
-                    </p>
-                </div>
-                <div class="tab-pane" id="testimonial2">
-                    <p class="description">Green I even had the pink polo I thought I was Kanye I promise I will never let the people down. I want a better life for all! And I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. Now there is only one important color...
-                    </p>
-                </div>
-                <div class="tab-pane" id="testimonial3">
-                    <p class="description"> I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. The 'Gaia' team did a great work while we were collaborating. They provided a vision that was in deep connection with our needs and helped us achieve our goals.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
 
 
-    <div class="section section-small section-get-started">
-        <div class="parallax filter">
-            <div class="image"
-                style="background-image: url('assets/img/office-1.jpeg')">
-            </div>
-            <div class="container">
-                <div class="title-area">
-                    <h2 class="text-white">Do you want to work with us?</h2>
-                    <div class="separator line-separator">♦</div>
-                    <p class="description"> We are convinced that language learning gives you freedome and brings you many more emotions in your live! Start your journey now and become fluent in your favourite language!</p>
-                </div>
+<div id="mfZoomPopup" class="mfPopUp2" style="border-radius: 20px; background: #444; color: #fff; text-align: center; font-size: 20px; width: 150px;height:40px;">
 
-                <div class="button-get-started">
-                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div style="display: block; width: 100%; overflow: hidden; text-align: center;">
+		  					  
+		  <span id="mfZoomBarPlusBtn" style="cursor: pointer;" class="mfZoomBarBtns mfImgLink ico-zoom_in" ></span> &nbsp; &nbsp;	
+		  <span id="mfZoomBar100Btn" style="cursor: pointer;" class="mfZoomBarBtns mfImgLink ico-refresh" ></span> &nbsp; &nbsp;	
+		  <span id="mfZoomBarMinusBtn" style="cursor: pointer;" class="mfZoomBarBtns mfImgLink ico-zoom_out" ></span>		
+		  		
+	</div>
+	
+</div>
+		  
 
 
-    <footer class="footer footer-big footer-color-black" data-color="black">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 col-sm-3">
-                    <div class="info">
-                        <h5 class="title">Company</h5>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a></li>
-                                <li>
-                                    <a href="#">Find offers</a>
-                                </li>
-                                <li>
-                                    <a href="#">Discover Projects</a>
-                                </li>
-                                <li>
-                                    <a href="#">Our Portfolio</a>
-                                </li>
-                                <li>
-                                    <a href="#">About Us</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-3 col-md-offset-1 col-sm-3">
-                    <div class="info">
-                        <h5 class="title"> Help and Support</h5>
-                         <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">How it works</a>
-                                </li>
-                                <li>
-                                    <a href="#">Terms &amp; Conditions</a>
-                                </li>
-                                <li>
-                                    <a href="#">Company Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#">Money Back</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <div class="info">
-                        <h5 class="title">Latest News</h5>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i> <b>Get Shit Done</b> The best kit in the market is here, just give it a try and let us...
-                                        <hr class="hr-small">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i> We've just been featured on <b> Awwwards Website</b>! Thank you everybody for...
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-2 col-md-offset-1 col-sm-3">
-                    <div class="info">
-                        <h5 class="title">Follow us on</h5>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-facebook btn-simple">
-                                        <i class="fa fa-facebook-square"></i> Facebook
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-dribbble btn-simple">
-                                        <i class="fa fa-dribbble"></i> Dribbble
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-twitter btn-simple">
-                                        <i class="fa fa-twitter"></i> Twitter
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-reddit btn-simple">
-                                        <i class="fa fa-google-plus-square"></i> Google+
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="copyright">
-                 © <script> document.write(new Date().getFullYear()) </script> Ilya Sidorov, made with love for better langauge learning
-            </div>
-        </div>
-    </footer>
+
+<div id="mfActionIndicator" style="overflow: hidden;  z-index: 1000100; display: none; width: 400px; height: 25px;  text-align: center; background-color: #ffffff; opacity: 1; padding-top: 2px; padding-left: 5px; padding-right: 5px;" >
+
+&nbsp; <span id="mfActionIndicatorMessage" style="font-size: 11px; font-weight: bold; color: #666;" ></span>
+
+</div>
+
 
 </body>
 
-<!--   core js files    -->
-<script src="assets/js/jquery.min.js" type="text/javascript"></script>
-<script src="assets/js/bootstrap.js" type="text/javascript"></script>
 
-<!--  js library for devices recognition -->
-<script type="text/javascript" src="assets/js/modernizr.js"></script>
 
-<!--  script for google maps   -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
-<!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
-<script type="text/javascript" src="assets/js/gaia.js"></script>
+
 
 </html>
