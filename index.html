@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilia Sidorov — Software Engineer</title>
+  <style>
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --surface-alt: #f0f1f5;
+      --border: #dde0e8;
+      --accent: #3b5fe2;
+      --accent-soft: rgba(59, 95, 226, 0.08);
+      --text: #1a1d2e;
+      --text-muted: #52576e;
+      --text-dim: #9097b0;
+      --tag-bg: #eef0f6;
+      --tag-border: #d4d8e8;
+      --green: #16a34a;
+      --radius: 12px;
+      --radius-sm: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+    a:hover { opacity: 0.8; }
+
+    /* ─── Layout ─── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Nav ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244, 245, 247, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); opacity: 1; }
+
+    /* ─── Hero ─── */
+    .hero {
+      padding: 80px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--border);
+    }
+
+    .hero-text h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: 16px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero-summary {
+      color: var(--text-muted);
+      font-size: 14px;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--text-muted);
+      border-color: var(--border);
+    }
+
+    .btn-ghost:hover { color: var(--text); border-color: var(--accent); opacity: 1; }
+
+    /* ─── Section ─── */
+    section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    /* ─── Experience ─── */
+    .companies { display: flex; flex-direction: column; gap: 28px; }
+
+    .company-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .company-group:hover { border-color: var(--accent); }
+
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 18px 28px;
+      background: var(--surface-alt);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .company-name {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .company-name a {
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .company-name a:hover { color: var(--accent); border-color: var(--accent); opacity: 1; }
+
+    .company-meta {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .company-tenure {
+      font-size: 12px;
+      color: var(--text-dim);
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .roles { display: flex; flex-direction: column; }
+
+    .role {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .role:last-child { border-bottom: none; }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .role-title {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .role-date {
+      font-size: 12px;
+      color: var(--text-dim);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .badge-current {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(22, 163, 74, 0.1);
+      border: 1px solid rgba(22, 163, 74, 0.3);
+      border-radius: 20px;
+      padding: 2px 10px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .job-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .job-bullets li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .job-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 11px;
+      top: 3px;
+    }
+
+    .stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid rgba(108, 142, 245, 0.2);
+      border-radius: 4px;
+      padding: 3px 9px;
+    }
+
+    /* ─── Skills ─── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+
+    .skill-card:hover { border-color: var(--accent); }
+
+    .skill-category {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-pill {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      border-radius: 4px;
+      padding: 3px 8px;
+    }
+
+    /* ─── Education ─── */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .edu-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(108, 142, 245, 0.2);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .edu-degree {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .edu-school {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .edu-years {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .edu-badge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .edu-badge-link:hover { opacity: 0.8; }
+
+    /* ─── Languages ─── */
+    .lang-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .lang-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .lang-name { font-weight: 700; font-size: 15px; }
+    .lang-level { font-size: 13px; color: var(--text-muted); }
+
+    /* ─── Footer ─── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 600px) {
+      .hero-inner { flex-direction: column; gap: 20px; }
+      .hero-text h1 { font-size: 26px; }
+      .company-header, .role { padding: 14px 18px; }
+      .edu-card { flex-direction: column; align-items: flex-start; }
+      nav .inner { gap: 12px; }
+      .nav-links { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <span class="nav-logo">Ilia Sidorov</span>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="avatar" src="avatar.jpg" alt="Ilia Sidorov" />
+      <div class="hero-text">
+        <h1>Ilia Sidorov</h1>
+        <div class="hero-title">Senior Software Engineer</div>
+        <p class="hero-summary">
+          Senior engineer specializing in subscription and usage-based billing systems. Full-stack across React, NestJS, PostgreSQL, and AWS, with a track record of owning complex integrations.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:iliasidorov90@gmail.com" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/ilia-sidorov-1b4778182/" target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/15202-sidorov" target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="https://15202-sidorov.github.io/" class="btn btn-ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Website
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">Experience</div>
+    <div class="companies">
+
+      <!-- TinyMCE -->
+      <div class="company-group">
+        <div class="company-header">
+          <div>
+            <div class="company-name">
+              <a href="https://www.tiny.cloud" target="_blank" rel="noopener">TinyMCE</a>
+            </div>
+            <div class="company-meta">Remote — Barcelona, Spain</div>
+          </div>
+          <span class="company-tenure">Oct 2021 – Present</span>
+        </div>
+        <div class="roles">
+
+          <div class="role">
+            <div class="role-header">
+              <div class="role-title">
+                Senior Software Engineer
+                <span class="badge-current">Current</span>
+              </div>
+              <span class="role-date">Oct 2021 – Present</span>
+            </div>
+            <ul class="job-bullets">
+              <li>Integrated AI capabilities into the usage-based billing system and customer portal, extending TinyMCE's AI product suite into existing production infrastructure at scale.</li>
+              <li>Developed and rolled out team-wide AI development guidelines — covering code review, testing, and daily tooling — accelerating delivery across the team during a period of rapid AI adoption.</li>
+              <li>Built and maintained the customer portal enabling both sales-assisted and self-service customers to set up the TinyMCE editor, purchase premium plugins, and manage subscriptions and usage; integrated Auth0-based social authentication and SSO, contributing to a 20% increase in user signups.</li>
+              <li>Played a central role in migrating 500,000+ users from a legacy WooCommerce billing solution to Maxio (Chargify.js), introducing usage-based billing that significantly increased MRR; gathered requirements and communicated closely with stakeholders throughout.</li>
+              <li>Developed customer-facing editor usage tracking.</li>
+              <li>Served as the primary domain expert through a period of team turnover, maintaining business continuity and onboarding new teammates.</li>
+              <li>Shifted focus to backend development (NestJS, PostgreSQL), extending APIs and integrations to support new TinyMCE features.</li>
+              <li>Picked up PHP on demand to maintain WordPress/WooCommerce components.</li>
+            </ul>
+            <div class="stack-row">
+              <span class="tag">React</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Maxio / Chargify.js</span>
+              <span class="tag">Auth0</span>
+              <span class="tag">WordPress</span>
+              <span class="tag">WooCommerce</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- INT Inc. -->
+      <div class="company-group">
+        <div class="company-header">
+          <div>
+            <div class="company-name">
+              <a href="https://www.int.com" target="_blank" rel="noopener">INT Inc.</a>
+            </div>
+            <div class="company-meta">Remote &mdash; Houston, USA</div>
+          </div>
+          <span class="company-tenure">Apr 2019 – Oct 2021</span>
+        </div>
+        <div class="roles">
+
+          <div class="role">
+            <div class="role-header">
+              <div class="role-title">Software Engineer</div>
+              <span class="role-date">Jun 2019 – Oct 2021</span>
+            </div>
+            <ul class="job-bullets">
+              <li>Contributed to GeoToolkit.js, an enterprise JavaScript library for geodata visualization — expanding support across major frameworks (React, Angular).</li>
+              <li>Led development of the Developer Portal for product and documentation distribution, taking the project from pre-production through release and owning DevOps, development, and support; gathered requirements and aligned closely with stakeholders across product and business teams throughout.</li>
+              <li>Improved documentation search performance for enterprise customers from over 5s to under 1s by coordinating with third-party project developers.</li>
+              <li>Worked on IVAAP SDK, a SaaS product integrating GeoToolkit.js for advanced 2D/3D subsurface data exploration — improving SDK simplicity and developer experience.</li>
+            </ul>
+            <div class="stack-row">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Angular</span>
+              <span class="tag">React</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
+
+          <div class="role">
+            <div class="role-header">
+              <div class="role-title">Intern</div>
+              <span class="role-date">Apr 2019 – Jun 2019</span>
+            </div>
+            <ul class="job-bullets">
+              <li>Delivered bug fixes and documentation improvements for GeoToolkit.js.</li>
+              <li>Built a new feature enabling CSS-like syntax for styling, gaining experience with a large codebase and computer graphics concepts.</li>
+            </ul>
+            <div class="stack-row">
+              <span class="tag">JavaScript</span>
+              <span class="tag">GeoToolkit.js</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-category">Languages</div>
+        <div class="skill-list">
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">TypeScript</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">PHP</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Frontend</div>
+        <div class="skill-list">
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Angular</span>
+          <span class="skill-pill">HTML/CSS</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Backend</div>
+        <div class="skill-list">
+          <span class="skill-pill">NestJS</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">PostgreSQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Infrastructure</div>
+        <div class="skill-list">
+          <span class="skill-pill">AWS</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">CI/CD</span>
+          <span class="skill-pill">Git</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Domains</div>
+        <div class="skill-list">
+          <span class="skill-pill">Billing / Maxio</span>
+          <span class="skill-pill">AI integration</span>
+          <span class="skill-pill">SSO / Auth0</span>
+          <span class="skill-pill">Data visualization</span>
+          <span class="skill-pill">SDK development</span>
+          <span class="skill-pill">Rich-text editing</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Languages spoken</div>
+        <div class="skill-list">
+          <span class="skill-pill">Russian (native)</span>
+          <span class="skill-pill">English (C1+)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-label">Education</div>
+    <div class="edu-list">
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-degree">B.Sc. in Information Technology</div>
+          <div class="edu-school">Novosibirsk State University</div>
+          <div class="edu-years">2015 – 2019</div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">📐</div>
+        <div>
+          <div class="edu-degree">Business Oriented System Design</div>
+          <div class="edu-school">Course &amp; Certification</div>
+          <a class="edu-badge-link" href="https://www.credly.com/badges/a98c3f1c-7c6e-4c91-8c52-7803a9a8296e" target="_blank" rel="noopener">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>
+            View Credly Badge
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 Ilia Sidorov &mdash; <a href="mailto:iliasidorov90@gmail.com">iliasidorov90@gmail.com</a>
+</footer>
+
+</body>
+</html>
